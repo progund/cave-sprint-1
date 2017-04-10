@@ -396,3 +396,12 @@ R4.6 toString() : String
 
 T1 The Thing class. We already gave you the Thing class!
 It's in the same package as Room and Player should be.
+
+----------
+
+When you have written the Room class, run the tests for that class.
+
+When you have written the Player class, run the tests for that class.
+
+When all the tests pass (you have fixed the classes so that they kind of work),
+then move on to fixing the GUI.
