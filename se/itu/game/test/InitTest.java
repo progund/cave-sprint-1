@@ -89,6 +89,7 @@ public class InitTest {
   }
   
   public static void main(String[] args) {
+    System.out.println("==Running test for the CaveInitializer class==");
     System.out.println("Running I1 (move around, pick up key):");
     InitTest test = new InitTest();
     test.testI1();
