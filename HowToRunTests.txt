@@ -1,0 +1,86 @@
+To run the test for Room:
+
+Place yourself in the directory above se/
+
+This directory should have the database cavedatabas.db and the
+driver for the SQLite3 JDBC.
+
+Issue the following to compile and run the Room test:
+
+javac se/itu/game/test/TestRoom.java && java -cp .:sqlite-jdbc-3.16.1.jar -ea se.itu.game.test.TestRoom
+Runing test R1 - connecting two rooms
+R1 passed OK.
+Running test R2 - checking things
+R2 passed OK
+
+Note that you need to have all the classes in place for the test to compile:
+
+se/itu/game/cave/Room.java
+se/itu/game/cave/Thing.java
+
+The Thing class, you got from the teachers (github).
+
+The Room class, you wrote yourself and you're about to test it.
+
+To run the test for Player:
+
+From the same directory as above, issue the following:
+
+javac se/itu/game/test/TestPlayer.java && java -cp .:sqlite-jdbc-3.16.1.jar -ea se.itu.game.test.TestPlayer
+Running test P1 (Picking up and dropping down things)
+P1 passed OK
+Running test P2 (Dropping things you already have etc)
+P3 passed OK
+Running test P3 (Moving in illegal direction)
+P3 passed OK
+
+Note that you need the following classes to compile the Player test:
+se/itu/game/cave/Room.java
+se/itu/game/cave/Thing.java
+se/itu/game/cave/Player.java
+
+The Player class you wrote yourself and you're now testing if it works.
+
+If you pass all tests, you should be able to start working on the GUI!
+
+The complete tree should now look like this:
+
+.
+|-- cavedatabas.db
+|-- doc
+|-- HowToRunTests.txt
+|-- Makefile
+|-- README.md
+|-- se
+|   `-- itu
+|       `-- game
+|           |-- cave
+|           |   |-- init
+|           |   |   |-- CaveInitializer.java
+|           |   |   |-- DbUtil.java
+|           |   |   |-- package-info.java
+|           |   |   `-- Things.java
+|           |   |-- package-info.java
+|           |   |-- Player.java
+|           |   |-- Room.java
+|           |   `-- Thing.java
+|           |-- gui
+|           |   |-- MainFrame.java
+|           |   `-- package-info.java
+|           |-- main
+|           |   |-- MainGui.java
+|           |   `-- package-info.java
+|           `-- test
+|               |-- InitTest.java
+|               |-- NavigationTests.java
+|               |-- TestPlayer.java
+|               |-- TestRoom.java
+|               |-- TestThingRule.java
+|               |-- TestUtils.java
+|               `-- ThingTests.java
+|-- sqlite-jdbc-3.16.1.jar
+|-- TODO.txt
+`-- uml
+    |-- Version1Cave.png
+    `-- Version1Cave.uxf
+
