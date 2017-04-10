@@ -39,13 +39,13 @@ public class Thing {
    */
   @Override
   public boolean equals(Object other) {
-    if (! (o instanceof Thing) ) {
+    if (! (other instanceof Thing) ) {
       return false;
     }
-    if (o == this) {
+    if (other == this) {
       return true;
     }
-    return ((Thing) o).name.equals(name);
+    return ((Thing) other).name.equals(name);
   }
     
 }
