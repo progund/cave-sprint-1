@@ -31,7 +31,6 @@ public class ThingTests {
       Verify that the key is missing in the room’s list of things.
       Verify that the key is present in the player’s inventory.
     */
-    System.out.println("Current room: " + player.currentRoom());
     player.go(EAST);
     assert(player.currentRoom().description().startsWith(EAST_ROOM_DESCR));
     assert(player.currentRoom().things().size() == 1)
@@ -48,7 +47,6 @@ public class ThingTests {
         
     /*
       Player is still in the east room and now has the key.
-      Verify that the description begins with “You are inside a building,”
       The player drops the key.
       Verify that the key is present in the room’s list of things.
       Verify that the key is missing in the player’s inventory.
@@ -62,12 +60,12 @@ public class ThingTests {
 
     System.out.println("==Running tests for various operations on Thing==");
     CaveInitializer.getInstance().initAll();
-    System.out.print("Test case T1: ");
+    System.out.print("Test case T1 - Go East, pick up key");
     ThingTests test = new ThingTests();
     test.testT1();
     System.out.println("OK");
 
-    System.out.print("Test case T2: ");
+    System.out.print("Test case T2 - Drop key");
     test.testT2();
     System.out.println("OK");
   }    
