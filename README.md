@@ -384,7 +384,7 @@ Comment: For this one, you need to have a working Room class, so that you know h
     // return a string with information about e.g.
     // the current room and the whole inventory.
   }
-```Java
+```
 
 Hint: If you convert a `java.util.List toString()`, either explictly or by using it together with a `String + theList`, you will get a nice String which could look something like this:
 
