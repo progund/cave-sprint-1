@@ -44,6 +44,8 @@ public class NavigationTests {
 
   public static void main(String [] args) {
 
+    System.out.println("==Running tests for navigation==");
+
     System.out.print("Test case N1: ");
     new NavigationTests().testN1();
     System.out.println("OK");
