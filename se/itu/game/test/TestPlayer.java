@@ -74,6 +74,7 @@ public class TestPlayer {
   public static void main(String[] args) {
     CaveInitializer.getInstance().initAll();
     TestPlayer test = new TestPlayer();
+    System.out.println("==Running test for the Player class==");
     System.out.println("Running test P1 (Picking up and dropping down things)");
     test.p1();
     System.out.println("P1 passed OK");
