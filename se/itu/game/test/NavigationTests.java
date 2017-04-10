@@ -23,7 +23,9 @@ public class NavigationTests {
     */
     CaveInitializer.getInstance().initAll();
     Player player = Player.getInstance();
-    assert(player.currentRoom().description().startsWith(START_ROOM_DESCR));
+    assert(player.currentRoom().description().startsWith(START_ROOM_DESCR))
+      : "Wrong initial room. Expected You are standing... Got: " +
+      player.currentRoom().description();
   }
 
   private void testN2() {
@@ -35,7 +37,9 @@ public class NavigationTests {
     CaveInitializer.getInstance().initAll();
     Player player = Player.getInstance();
     player.go(WEST);
-    assert(player.currentRoom().description().startsWith(WEST_ROOM_DESCR));
+    assert(player.currentRoom().description().startsWith(WEST_ROOM_DESCR))
+      : "Wrong room after going West. Expected: You have walked up... Got: " +
+      player.currentRoom().description();
   }
 
   public static void main(String [] args) {
