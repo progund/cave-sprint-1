@@ -8,7 +8,7 @@ driver for the SQLite3 JDBC.
 Issue the following to compile and run the Room test:
 
 javac se/itu/game/test/TestRoom.java && java -cp .:sqlite-jdbc-3.16.1.jar -ea se.itu.game.test.TestRoom
-Runing test R1 - connecting two rooms
+Running test R1 - connecting two rooms
 R1 passed OK.
 Running test R2 - checking things
 R2 passed OK
