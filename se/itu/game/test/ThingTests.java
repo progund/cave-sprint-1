@@ -60,6 +60,7 @@ public class ThingTests {
 
   public static void main(String [] args) {
 
+    System.out.println("==Running tests for various operations on Thing==");
     CaveInitializer.getInstance().initAll();
     System.out.print("Test case T1: ");
     ThingTests test = new ThingTests();
