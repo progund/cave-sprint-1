@@ -10,7 +10,7 @@ The corresponding directory is
 `se/itu/game/cave/`
 
 # Classes you should write
-##R1 The Room class
+## R1 The Room class
 The Room class is used by the CaveInitializer which reads from the database and creates the Room graph (the map of connected Room:s).
 
 So you'll need some methods in place which we'll provide for you here.
@@ -20,9 +20,9 @@ Package statement:
 package se.itu.game.cave;
 ```
 
-##R2 The constructor and methods we'll give you straight-up:
+## R2 The constructor and methods we'll give you straight-up:
 
-###R2.1 The inner class of type enum
+### R2.1 The inner class of type enum
 ```Java
   public static enum Direction {
     NORTH,
@@ -34,7 +34,7 @@ package se.itu.game.cave;
 
 Put that somewhere inside the class, e.g. in the beginning, after the instance variable list.
 
-###R2.2 Constructor
+### R2.2 Constructor
 Comment: This horrible constructor is here to give you motivation to learn about Builder in coming sprints.
 
 ```Java
@@ -68,7 +68,7 @@ Comment: This horrible constructor is here to give you motivation to learn about
   }
 ```
 
-###R2.3 setConnectingRoom - used when building the graph
+### R2.3 setConnectingRoom - used when building the graph
 
 ```Java
   /**
@@ -95,7 +95,7 @@ Comment: This horrible constructor is here to give you motivation to learn about
   }
 ```
 
-##R3 Instance variables needed for the Room class
+## R3 Instance variables needed for the Room class
 
 Each Room should, according to the UML and the lectures, keep track of a few things:
 * List of things
@@ -125,12 +125,12 @@ import java.util.List;
 import java.util.ArrayList;
 ```
 
-##R4 Instance methods
+## R4 Instance methods
 Let's again talk about sending messages to a Room (calling a method), or what behavior a Room exhibits (according to our analysis in class).
 
 The UML specifies a few methods.
 
-###R4.1 things() : Thing[*]
+### R4.1 things() : Thing[*]
 
 ```Java
   /**
@@ -150,7 +150,7 @@ Hint: Collections has a utility method for making an unmodifiable view of some l
 
 The call on the second line creates an unmodifiableList from the variable list.
 
-###R4.2 removeThing(thing : Thing) : Thing
+### R4.2 removeThing(thing : Thing) : Thing
 Comment:
 
 There are some checks to do here and some exceptions to throw if the checks fails.
@@ -180,7 +180,7 @@ All of the above are errors in the game logic, so we decided it is better to cra
   }
 ```
 
-###R4.3 putThing(thing : Thing) : void
+### R4.3 putThing(thing : Thing) : void
 
 Comment: Same as above. We don't want to permit stupid things like adding null to the room, or adding a thing which already exists in the Room. Better to crash the program so that people learn to do the right thing ;-)
 
@@ -201,7 +201,7 @@ Comment: Same as above. We don't want to permit stupid things like adding null t
   }
 ```
 
-###R4.4 getRoom(direction : Room.Direction) : Room
+### R4.4 getRoom(direction : Room.Direction) : Room
 
 ```Java
   /**
@@ -219,7 +219,7 @@ Comment: Same as above. We don't want to permit stupid things like adding null t
   }
 ```
 
-###R4.5 description() : String
+### R4.5 description() : String
 
 ```Java
   /**
@@ -232,7 +232,7 @@ Comment: Same as above. We don't want to permit stupid things like adding null t
   }    
 ```
 
-###R4.6 toString() : String
+### R4.6 toString() : String
 
 ```Java
   /**
@@ -259,7 +259,7 @@ In order to achieve that, you need to take some actions:
   private static Player player;
 ```
 
-###P1.2. Make the constructor of Player private, so that no one can create instances using "new":
+### P1.2. Make the constructor of Player private, so that no one can create instances using "new":
 ```Java
   /**
    * private constructor to prevent instantiation.
@@ -269,7 +269,7 @@ In order to achieve that, you need to take some actions:
     currentRoom = room;
   }
 ```
-###P1.3. Create a public static method called getInstance which returns the reference to the only player:
+### P1.3. Create a public static method called getInstance which returns the reference to the only player:
 ```Java
   /**
    * @return the one and only instance of Player.
@@ -290,7 +290,7 @@ Player player = Player.getInstance();
 
 Whenever and wherever that code is executed (in a single-threaded program), you will always get the same, one and only, player.
 
-##P2. What instance variables does the player class need?
+## P2. What instance variables does the player class need?
 The player class needs to keep track of the current room in one variable (as shown by the lectures and the UML). And it needs
 to keep track of the inventory with things. We suggest you use the following instance variables:
 ```Java
@@ -299,12 +299,12 @@ to keep track of the inventory with things. We suggest you use the following ins
 ```
 You'll need to import java.util.List and java.util.ArrayList. Look at the constructor again, to see why.
 
-##P3. What public instance methods (what behavior should the player have, or what messages should we be able to send to the player) should the Player class have?
+## P3. What public instance methods (what behavior should the player have, or what messages should we be able to send to the player) should the Player class have?
 
 Follow the UML diagram!
 
 Here they are (You'll need to figure out the code in the methods yourselves):
-###P3.1 takeThing(thing : Thing) : void
+### P3.1 takeThing(thing : Thing) : void
 ```Java
   /**
    * Takes a thing (i e in a room) and puts in the inventory.
@@ -316,7 +316,7 @@ Here they are (You'll need to figure out the code in the methods yourselves):
   }
 ```
 
-###P3.2 dropThing(thing : Thing) : void
+### P3.2 dropThing(thing : Thing) : void
 ```Java
   /**
    * Drop down a thing in the current room and remove it from the inventory.
@@ -330,7 +330,7 @@ Here they are (You'll need to figure out the code in the methods yourselves):
   }
 ```
 
-###P3.3 inventory() : Thing[*]
+### P3.3 inventory() : Thing[*]
 ```Java
   /**
    * Return the player's inventory
@@ -345,7 +345,7 @@ Here they are (You'll need to figure out the code in the methods yourselves):
   }
 ```
 
-###P3.4 currentRoom() : Room
+### P3.4 currentRoom() : Room
 ```Java
   /**
    * Returns the current Room.
@@ -355,7 +355,7 @@ Here they are (You'll need to figure out the code in the methods yourselves):
     // return a reference to the Player's current Room
   }
 ```
-###P3.5 go(direction : Room.Direction) : void
+### P3.5 go(direction : Room.Direction) : void
 
 Comment: For this one, you need to have a working Room class, so that you know how to ask a Room for the room in some direction.
 ```Java
@@ -373,7 +373,7 @@ Comment: For this one, you need to have a working Room class, so that you know h
   }
 ```
 
-###P3.6 toString() : String
+### P3.6 toString() : String
 ```Java
   /**
    * Returns a String representation of the player<br>
