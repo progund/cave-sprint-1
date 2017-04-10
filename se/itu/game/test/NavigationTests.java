@@ -16,7 +16,6 @@ import static se.itu.game.test.TestUtils.NORTH_ROOM_DESCR;
 
 public class NavigationTests {
 
-
   private void testN1() {
         
     /*
@@ -39,7 +38,6 @@ public class NavigationTests {
     assert(player.currentRoom().description().startsWith(WEST_ROOM_DESCR));
   }
 
-
   public static void main(String [] args) {
 
     System.out.print("Test case N1: ");
@@ -48,9 +46,7 @@ public class NavigationTests {
 
     System.out.print("Test case N2: ");
     new NavigationTests().testN2();
-    System.out.println("OK");
-
-        
+    System.out.println("OK");        
   }
     
 }
