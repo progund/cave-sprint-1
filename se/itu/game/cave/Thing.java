@@ -35,9 +35,10 @@ public class Thing {
   /**
    * Check if this Thing equals other
    * @return true if this Thing equals other
+   * @param other The Object to check if this Thing is equal to
    */
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(Object other) {
     if (! (o instanceof Thing) ) {
       return false;
     }
