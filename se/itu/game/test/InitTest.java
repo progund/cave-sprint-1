@@ -4,11 +4,13 @@ import se.itu.game.cave.Room;
 import se.itu.game.cave.Player;
 import se.itu.game.cave.Thing;
 import se.itu.game.cave.init.CaveInitializer;
+import se.itu.game.cave.init.Things;
 
 import static se.itu.game.test.TestUtils.START_ROOM_DESCR;
 import static se.itu.game.test.TestUtils.EAST_ROOM_DESCR;
 import static se.itu.game.test.TestUtils.WEST_ROOM_DESCR; 
 import static se.itu.game.test.TestUtils.NORTH_ROOM_DESCR;
+import static se.itu.game.test.TestUtils.SOUTH_4_ROOM_DESCR;
 
 import static se.itu.game.cave.Room.Direction.NORTH;
 import static se.itu.game.cave.Room.Direction.EAST;
@@ -17,19 +19,18 @@ import static se.itu.game.cave.Room.Direction.WEST;
 
 public class InitTest {
 
-  CaveInitializer init;
-  private static Player player;
-  private static final Thing skeletonKey = new Thing("Skeleton Key");
-  private static final Thing cage = new Thing("Cage");
-
-  private static final String EAST_ROOM_DESC = "You are inside a building";
-  private static final String FIRST_ROOM_DESC = "You are standing at the end of a road";
-  private static final String SOUTH_4_ROOM_DESC = "You are in a small chamber";
-  private static final String CAGE_ROOM_DESC = "You are crawling over cobbles";
+  static {
+    CaveInitializer.getInstance().initAll();
+  }
   
+  private static Player player;
+  private static final Thing skeletonKey = Things.get("Skeleton Key");
+  private static final Thing cage = Things.get("Cage");
+
+  /*
+
+  */
   public InitTest(){
-    init = CaveInitializer.getInstance();
-    init.initAll();
     player = Player.getInstance();
   }
 
@@ -57,7 +58,7 @@ public class InitTest {
       pick up the Cage, verify inventory + room things
      */
     player.go(EAST);
-    assert player.currentRoom().description().startsWith(EAST_ROOM_DESC)
+    assert player.currentRoom().description().startsWith(EAST_ROOM_DESCR)
       : "East from first room failed. Player's room: "
       + player.currentRoom();
     player.takeThing(skeletonKey);
@@ -65,13 +66,13 @@ public class InitTest {
       : "Player couldn't take " + skeletonKey + " room: "
       + player.currentRoom();
     player.go(WEST);
-    assert player.currentRoom().description().startsWith(FIRST_ROOM_DESC)
+    assert player.currentRoom().description().startsWith(START_ROOM_DESCR)
       : "West from east room failed. Player's room: "
       + player.currentRoom();
     for (int i = 0; i < 4; i++) {
       player.go(SOUTH);
     }
-    assert player.currentRoom().description().startsWith(SOUTH_4_ROOM_DESC)
+    assert player.currentRoom().description().startsWith(SOUTH_4_ROOM_DESCR)
       : "South x 4 from first room failed. Player's room: "
       + player.currentRoom();
     player.go(WEST);
