@@ -11,7 +11,6 @@ import se.itu.game.cave.Thing;
 import java.util.List;
 import java.util.ArrayList;
 
-
 public class TestUtils {
 
   public static final String START_ROOM_DESCR = "You are standing at the end of";
@@ -20,6 +19,7 @@ public class TestUtils {
   public static final String NORTH_ROOM_DESCR = "You are in open forest";
   public static final String SOUTH_4_ROOM_DESCR = "You are in a small chamber";
   public static final String CAGE_ROOM_DESC = "You are crawling over cobbles";
+
   private static Room createRoom(String description,
                                  Room north,        
                                  Room east,
@@ -28,7 +28,6 @@ public class TestUtils {
     List<Thing> things = new ArrayList<Thing>();
     return new Room (description,north,east,south,west, things);
   }
-    
 
   public static Room getTest1Cave()  {
 
@@ -61,6 +60,5 @@ public class TestUtils {
         
     return startingRoom;
   }
-
-
+  
 }
