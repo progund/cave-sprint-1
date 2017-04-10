@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>20</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1680</x>
+      <y>220</y>
+      <w>540</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>se.itu.game.cave::Thing
+--
+-name : String
+--
++Thing(name : String)
++toString() : String
++thing() : String
++equals(other : Object) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>220</y>
+      <w>720</w>
+      <h>740</h>
+    </coordinates>
+    <panel_attributes>se.itu.game.cave::Room
+--
+-north : Room
+-south : Room
+-east : Room
+-west : Room
+-things : Thing [0..*]
+-description : String
+--
++Room(desc : String,
+      north : Room,
+      south: Room,
+      east:   Room,
+      west:  Room,
+      things: Thing [0..*])
++things() : Thing [0..*]
++removeThing(things : Thing) : Thing
++putThing(things : Thing) : void
++setConnectingRoom(direction : Room.Direction,
+                   room : Room) : void
++getRoom(direction : Room.Direction) : Room
++description() : String
++toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>300</y>
+      <w>1020</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>340</y>
+      <w>720</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+A Room can have 0..4 exits to other rooms</panel_attributes>
+    <additional_attributes>10.0;60.0;40.0;60.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>980</y>
+      <w>720</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Room.Direction
+(nested class of Room)
+--
+NORTH
+EAST
+SOUTH
+WEST</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>780</x>
+      <y>280</y>
+      <w>920</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>A room can have 0 or more things                                        0..*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>640</y>
+      <w>560</w>
+      <h>660</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;singelton&gt;&gt;
+se.itu.game.cave::Player
+--
+_-instance : Player_
+-inventory : List [0..*]
+-currentRoom : Room
+--
+-Player(room : Room)
++takeThing(thing : Thing) : void
++dropThing(thing : Thing) : void
++inventory() : Thing [0..*]
+_+getInstance() : Player_
++currentRoom() : Room
++go(direction : Room.Direction) : void
++toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1540</x>
+      <y>760</y>
+      <w>360</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1840</x>
+      <y>460</y>
+      <w>100</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>780</y>
+      <w>340</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>780</y>
+      <w>340</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+</diagram>
