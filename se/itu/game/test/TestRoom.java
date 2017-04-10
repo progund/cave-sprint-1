@@ -93,6 +93,7 @@ public class TestRoom {
   public static void main(String[] args) {
     CaveInitializer.getInstance().initAll();
     TestRoom test = new TestRoom();
+    System.out.println("==Running test for the Room class==");
     System.out.println("Runing test R1 - connecting two rooms");
     test.r1();
     System.out.println("R1 passed OK.");
