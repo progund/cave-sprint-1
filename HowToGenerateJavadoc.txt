@@ -1,0 +1,20 @@
+In order to generate the Javadoc(tm) documentation, issue the following:
+
+javadoc -d doc -link  http://docs.oracle.com/javase/8/docs/api/ se.itu.game.cave se.itu.game.main se.itu.game.cave.init se.itu.game.gui
+
+The command must be issued from the directory above se/
+
+(that is, the same directory as you finde the database, the JDBC Jar file and the se/ source tree directory)
+
+The command will place the documentation as HTML in the doc/ directory.
+
+To see the documentation, open the doc/index.html file in a browser.
+
+If you have, e.g. google-chrome (or firefox) in your PATH variable, this can be done from the command line:
+
+google-chrome doc/index.html
+
+or
+
+firefox doc/index.html
+
