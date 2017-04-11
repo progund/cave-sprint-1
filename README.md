@@ -311,7 +311,7 @@ Here they are (You'll need to figure out the code in the methods yourselves):
    * @param thing The Thing to take (pick up)
    */
   public void takeThing(Thing thing) {
-    // Remove this things from the current room
+    // Remove this thing from the current room
     // Add this thing to the inventory
   }
 ```
