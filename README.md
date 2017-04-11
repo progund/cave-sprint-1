@@ -282,7 +282,7 @@ In order to achieve that, you need to take some actions:
   }
 ```
 
-Now, Player is a "singelton" class. In order for e.g. the GUI to get hold of the player, the syntax is:
+Now, Player is a "singleton" class. In order for e.g. the GUI to get hold of the player, the syntax is:
 
 ```Java
 Player player = Player.getInstance();
