@@ -236,8 +236,8 @@ Comment: Same as above. We don't want to permit stupid things like adding null t
 
 ```Java
   /**
-   * Returns a String representatio of the Room
-   * @return a String representatio of the Room
+   * Returns a String representation of the Room
+   * @return a String representation of the Room
    */
   public String toString() {
     // Return a String describing this room.
@@ -250,7 +250,7 @@ Package statement:
 ```Java
 package se.itu.game.cave;
 ```
-The Player class should be a Singelton (there should only ever be one Player instance in the Game).
+The Player class should be a Singleton (there should only ever be one Player instance in the Game).
 
 In order to achieve that, you need to take some actions:
 
