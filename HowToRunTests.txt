@@ -5,6 +5,12 @@ Place yourself in the directory above se/
 This directory should have the database cavedatabas.db and the
 driver for the SQLite3 JDBC.
 
+NOTE: If you are running Windows, you must use ; (semicolon) instead of : (colon), with the class path below, and if you also are running Cygwin inside Windows, you must enclose the whole class path in double quotes!
+
+Windows: ```java -cp ".;sqlite-jdbc-3.16.1.jar"``` etc.
+
+Mac OS or GNU/Linux: ```java -cp .:sqlite-jdbc-3.16.1.jar"``` etc. 
+
 Issue the following to compile and run the Room test:
 
 javac se/itu/game/test/TestRoom.java && java -cp .:sqlite-jdbc-3.16.1.jar -ea se.itu.game.test.TestRoom
